@@ -1,0 +1,2 @@
+class TestLogin < ApplicationRecord
+end

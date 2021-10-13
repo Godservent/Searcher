@@ -1,0 +1,17 @@
+<ul class = "a1">
+    <% @users.each do |user|%>
+    <li>
+        <strong><%= user.username%></strong>
+    </li>
+    <%end%>
+</ul>
+
+<%@temp = "https://google.com"%>
+<a href= <%=@temp%>>Google.com</a>
+
+<%@temp = "http://localhost:3000/home/main"%>
+<a href= <%=@temp%>>localhost:3000/home/main</a>
+
+<style>
+.a1{text-align:center}
+</style>

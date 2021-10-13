@@ -1,0 +1,49 @@
+<%@host = "http://127.0.0.1:3000"%>
+
+<body style="background-color:rgb(69, 123, 157);">
+<div name="title" style="color:Honeydew; background-color:rgb(69, 123, 157);">
+  <p>
+    <%@host = "http://127.0.0.1:3000"%>
+    <h1 style="text-align:center;"><strong>Searcher</strong></h1>
+    <!--a href="http://127.0.0.1:3000/home/add_product" target="-blank" style="color:rgb(244, 162, 97); float:right;">ADD</a-->
+    <a href=<%= @host+"/home/create"%> target="-self" style="color:rgb(244, 162, 97); float:right;">ADD</a>
+  <br>
+</div>
+
+<div name="search" style="text-align:center; color:Honeydew; background-color:rgb(69, 123, 157);">
+  <%=form_with url:"https://google.com", method: :get do |form|%>
+    <%=form.search_field :query%>
+    <%=form.submit "Search"%>
+  <%end%>
+</div>
+<!--Above one has to be changed-->
+<br><br><br>
+
+<div name="available_cart" style="text-align:center; background-color:rgb(165, 165, 141);">
+  <p>
+    <h2>Available in Cart</h2>
+  </p>
+
+  <table style="table-align:center; width:100%;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Previous Price</th>
+        <th>Current Price</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%@products.each do |item|%>
+        <tr>
+          <td><%= item.name%></td>
+          <td><%= item.previous_price%></td>
+          <td style="color:rgb(42, 157, 143);"><strong><%= item.current_price%></strong></td>
+          <td><%= item.image_url%></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
+</body>

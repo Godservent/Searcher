@@ -1,0 +1,17 @@
+<%@host = "http://127.0.0.1:3000"%>
+
+<body style="background-color:rgb(69, 123, 157);">
+
+<div name="title" style="color:Honeydew; background-color:rgb(69, 123, 157);">
+    <p>
+        <h3 style="text-align:left;">ADD NEW PRODUCT</h3>
+    </p>
+    <br>
+</div>
+
+<div>
+    <%=form_with scope: :product, url:product_path ,local:true do |f|%>
+    <%end%>
+</div>
+
+</body>
